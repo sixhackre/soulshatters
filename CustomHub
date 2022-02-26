@@ -42,6 +42,12 @@ Section1:NewButton("Holy Custom", "Holy Custom", function()
     loadstring(game:HttpGet("https://raw.githubusercontent.com/sixhackre/soulshatters/main/holy", true))()
 end)
 
+Section1:NewButton("Mayhem Fire God", "Mayhem Fire God", function()
+    warn("Mayhem Fire God Loaded")
+    --made by h01y
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/miguel831/Topi/main/SoulShattersScripts/Mayhem%20Fire%20God", true))()
+end)
+
 Section1:NewButton("Drip Goku", "Drip Goku", function()
 if vis == true then
     warn("DripGokuVisLoaded")
