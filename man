@@ -4816,7 +4816,7 @@ local pass = getrenv()._G.Pass
 		if plr.Character:FindFirstChild("ForceField") then
 			plr.Character.ForceField:Destroy()
 		end
-		wait(0.2)
+		wait(0.1)
 		pcall(function()
 			remotes.Functions:InvokeServer({pass, "Reset"})
 		end)
@@ -5480,6 +5480,9 @@ end
 end
 end)
 --
+		pcall(function()
+			remotes.Functions:InvokeServer({pass, "Reset"})
+		end)
 
 	warn("Frisk Loaded")
 end
