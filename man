@@ -4758,6 +4758,14 @@ spawn(function()
 end)
 --
 
+local runS = game:GetService("RunService")
+plr:WaitForChild("PlayerGui").ChildAdded:Connect(function(c)
+	runS.Heartbeat:Wait()
+	if c.Name == "HyperGonerMiniGame" then
+		c:Destroy()
+	end
+end)
+
 --//Hide Chat\\
 _G.hidechat = true
 local mt = getrawmetatable(game)
