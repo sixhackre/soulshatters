@@ -76,6 +76,7 @@ if child.Text == "External" then
 	game.ReplicatedStorage.Remotes.Functions:InvokeServer({getrenv()._G.Pass,"ChangeSetting","MorphEnabled",true})
 	end
 child.MouseButton1Click:connect(function()
+game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
 if G_Morph == true then
 game.ReplicatedStorage.Remotes.Functions:InvokeServer({getrenv()._G.Pass,"ChangeSetting","MorphEnabled",true})
 end
@@ -4227,7 +4228,7 @@ if Rage > 99 and RageMode == false and RageActived100 == false and InAction == f
 RageActived100 = true
  InAction = true
  Music:Stop()
- Music.SoundId = "rbxassetid://7029092469"
+ Music.SoundId = game.ReplicatedStorage.Resources.Character.CustomMusic.My.TransformedPlaylist["1Bunny"].SoundId
     
     game.Players.LocalPlayer.Backpack.Main.RunSpeed.Value = 0
     game.Players.LocalPlayer.Backpack.Main.WalkSpeed.Value = 0
@@ -4749,6 +4750,7 @@ if child.Text == "ChaosMaker" then
 	game.ReplicatedStorage.Remotes.Functions:InvokeServer({getrenv()._G.Pass,"ChangeSetting","MorphEnabled",true})
 	end
 child.MouseButton1Click:connect(function()
+game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
 if G_Morph == true then
 game.ReplicatedStorage.Remotes.Functions:InvokeServer({getrenv()._G.Pass,"ChangeSetting","MorphEnabled",true})
 end
@@ -5035,7 +5037,7 @@ game:GetService("Players").LocalPlayer.PlayerGui.UI.Ui.StaminaBar.Position = UDi
 --//Music\\
 
 
-local Music = Instance.new("Sound")
+--[[local Music = Instance.new("Sound")
 Music.Parent = game.Players.LocalPlayer.PlayerGui
 Music.Volume = 1
 Music.Playing = true
@@ -5044,7 +5046,7 @@ Music.SoundId = "rbxassetid://7023690024" --game.ReplicatedStorage.Resources.Cha
 Music.Name = "Chaos Maker Song"
 Music:Play()
 char.Head:WaitForChild("Voice").SoundId = game.ReplicatedStorage.Resources.Character.Voices.Voice8.SoundId
-
+--]]
 --
 
 --//Guis\\
@@ -5566,12 +5568,51 @@ clone33.Name = 'PinkSmoke'
 end
 end
 end)
+
 --
+
+--//Attacks\\
+local mouse = game.Players.LocalPlayer:GetMouse()
+mouse.KeyDown:Connect(function(k, typing)
+    if typing then return end
+	if k == "p" then
+print("k")
+ local function getlockchar2()
+		 for _,v in pairs(game.workspace:GetChildren()) do
+                if v:FindFirstChildOfClass('Humanoid') and v ~= char and v:FindFirstChild('HumanoidRootPart') and v:FindFirstChild("Humanoid").Health > 0 and v:FindFirstChild("Type").Value ~= "Sans" then
+            local char = v
+            return char
+        end 
+		 end
+		 end
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = getlockchar2().HumanoidRootPart.CFrame * CFrame.new(0,0,3)
+wait(0.3)
+	local args = {
+            [1] = getrenv()._G.Pass,
+            [2] = getlockchar2(),
+            [3] = {
+                ["Type"] = "Normal", 
+                ["HitTime"] = 1, 
+                ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.SleepingSans,
+                ["Velocity"] = Vector3.new(0,-0.0001,0),
+                ["HitEffect"] = "LightHitEffect", 
+                ["CombatInv"] = true, 
+                ["Sound"] = game:GetService("ReplicatedStorage").Resources.Character.CustomMusic.My.TransformedPlaylist["1Bunny"], 
+                ["Damage"] = 0
+            }
+        }
+		 game:GetService("ReplicatedStorage").Remotes.Damage:InvokeServer(unpack(args))
+	end
+	end)
+
+
+
 		pcall(function()
 			remotes.Functions:InvokeServer({pass, "Reset"})
 		end)
 
 	warn("Frisk Loaded")
+	    
 end)
 end
 end)
