@@ -4,6 +4,8 @@
 --//King Dream\\ (Some Attacks,Fuctions and effects)
 --//Lord\\ (for some things (no cooldown))
 
+
+--//External Custom\\
 --Keybinds:1,2,3,4,5,Z
 --Rage Go Up Using Attacks
 --Keybind 6,7,8,c,v,b unlock in Rage Mode
@@ -14,23 +16,69 @@
 --this script work better in synapse or krnl maybe fluxus too
 
 --//Configs\\
-
-G_Visualizer = true --Active Visualizer Gui
 DamageAura = false -- Active A Aura that give damage (It Can Kick Sometimes i think) (you also can active it pressing P)
 OpAura = true -- Make the DamageAura Do NaN Damage (Good)
 WaitTimeAura = 0.53 -- 0.53 is the default lower than this can give a kick recomended 0.5
+---------------------
+
+
+--//Chaos Maker\\
+
+--//Warning\\
+--this script work better in synapse or krnl maybe fluxus too
+
 --
 
+--//Geral Settings\\
+
+G_Visualizer = true --Active Visualizer Gui
+G_Morph = true -- Active Morph (if you want be almost invisible to report)
 
 
 --game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
-game.ReplicatedStorage.Remotes.Functions:InvokeServer({getrenv()._G.Pass,"ChangeSetting","MorphEnabled",true})
 --game.Players.LocalPlayer.PlayerGui.CharacterSelection.Character.Value = "Chara"
+--game.Players.LocalPlayer.CharacterAdded:Wait()
 
-game.Players.LocalPlayer.CharacterAdded:Wait()
+--//Guis\\
+--//External\\
+local Aus = Instance.new("Folder")
+Aus.Parent = game.Players.LocalPlayer.PlayerGui.CharacterSelection.Frame.Characters
+Aus.Name = "7External Custom"--Folder Au Name
+local Char = Instance.new("StringValue")
+Char.Parent = game.Players.LocalPlayer.PlayerGui.CharacterSelection.Frame.Characters["7External Custom"]
+Char.Name = "Character"
+Char.Value = "External"--Au Char Name
 
-if game.Players.LocalPlayer.Character:WaitForChild("Type").Value == "Chara" then
+local CharTrueValue = Instance.new("StringValue")
+CharTrueValue.Parent = game.Players.LocalPlayer.PlayerGui.CharacterSelection.Frame.Characters["7External Custom"].Character
+CharTrueValue.Name = "TrueValue"
+CharTrueValue.Value = [[Chara]]---An character Value
+--
+--//Chaos Maker\\
+local Char2 = Instance.new("StringValue")
+Char2.Parent = game.Players.LocalPlayer.PlayerGui.CharacterSelection.Frame.Characters["7External Custom"]
+Char2.Name = "Character2"
+Char2.Value = "ChaosMaker"--Au Char Name
 
+local CharTrueValue2 = Instance.new("StringValue")
+CharTrueValue2.Parent = game.Players.LocalPlayer.PlayerGui.CharacterSelection.Frame.Characters["7External Custom"].Character2
+CharTrueValue2.Name = "TrueValue"
+CharTrueValue2.Value = [[Frisk]]---An character Value
+
+--
+game.Players.LocalPlayer.PlayerGui.CharacterSelection.Frame.LocalScript.Disabled = true
+game.Players.LocalPlayer.PlayerGui.CharacterSelection.Frame.LocalScript.Disabled = false
+
+
+game.Players.LocalPlayer.PlayerGui.CharacterSelection.Frame.Gui.ChildAdded:connect(function(child)
+if child.Text == "External" then
+	if G_Morph == true then
+	game.ReplicatedStorage.Remotes.Functions:InvokeServer({getrenv()._G.Pass,"ChangeSetting","MorphEnabled",true})
+	end
+child.MouseButton1Click:connect(function()
+if G_Morph == true then
+game.ReplicatedStorage.Remotes.Functions:InvokeServer({getrenv()._G.Pass,"ChangeSetting","MorphEnabled",true})
+end
 wait(0.5)
 
 game.Players.LocalPlayer.Character.Head:WaitForChild("HealthBar"):Destroy()
@@ -61,13 +109,12 @@ game.Players.LocalPlayer.Backpack:WaitForChild("Main"):WaitForChild("CharaMoves"
 game.Players.LocalPlayer.Backpack:WaitForChild("Main"):WaitForChild("CharaMoves").Animations.Walk.AnimationId = "rbxassetid://4196634355"
 --game.Players.LocalPlayer.Backpack:WaitForChild("Main"):WaitForChild("CharaMoves").Animations.Idle.AnimationId = "rbxassetid://9574470881"
 game.Players.LocalPlayer.Backpack:WaitForChild("Main"):WaitForChild("CharaMoves").Animations.Jump.AnimationId = "rbxassetid://9583808233"
-game.Players.LocalPlayer.Backpack:WaitForChild("Main"):WaitForChild("CharaMoves"):WaitForChild("ModuleScript"):WaitForChild("Animations").BladesCombat.Light1.AnimationId = "rbxassetid://4800624938"
-game.Players.LocalPlayer.Backpack:WaitForChild("Main"):WaitForChild("CharaMoves").ModuleScript.Animations:WaitForChild("BladesCombat"):WaitForChild("Light2").AnimationId = "rbxassetid://4800163313"
-game.Players.LocalPlayer.Backpack:WaitForChild("Main"):WaitForChild("CharaMoves").ModuleScript.Animations.BladesCombat.Light3.AnimationId = "rbxassetid://5776251749"
-game.Players.LocalPlayer.Backpack:WaitForChild("Main"):WaitForChild("CharaMoves").ModuleScript.Animations.BladesCombat.Light4.AnimationId = "rbxassetid://4800630930"
-game.Players.LocalPlayer.Backpack:WaitForChild("Main"):WaitForChild("CharaMoves").ModuleScript.Animations.BladesCombat.Light5.AnimationId = "rbxassetid://6154060166"
-game.Players.LocalPlayer.Backpack:WaitForChild("Main"):WaitForChild("CharaMoves").ModuleScript.Animations.BladesCombat.Light6.AnimationId = "rbxassetid://4456901030"
-game.Players.LocalPlayer.Backpack:WaitForChild("Main"):WaitForChild("CharaMoves").Animations.Block.AnimationId = "rbxassetid://5657245133"
+game.Players.LocalPlayer.Backpack:WaitForChild("Main"):WaitForChild("CharaMoves").ModuleScript.Animations.BladesCombat.Light1.AnimationId = "rbxassetid://5776230796"
+game.Players.LocalPlayer.Backpack:WaitForChild("Main"):WaitForChild("CharaMoves").ModuleScript.Animations.BladesCombat.Light2.AnimationId = "rbxassetid://4800436094"
+game.Players.LocalPlayer.Backpack:WaitForChild("Main"):WaitForChild("CharaMoves").ModuleScript.Animations.BladesCombat.Light3.AnimationId = "rbxassetid://4348323561"
+game.Players.LocalPlayer.Backpack:WaitForChild("Main"):WaitForChild("CharaMoves").ModuleScript.Animations.BladesCombat.Light4.AnimationId = "rbxassetid://5657143572"
+game.Players.LocalPlayer.Backpack:WaitForChild("Main"):WaitForChild("CharaMoves").ModuleScript.Animations.BladesCombat.Light5.AnimationId = "rbxassetid://5667210178"
+game.Players.LocalPlayer.Backpack:WaitForChild("Main"):WaitForChild("CharaMoves").ModuleScript.Animations.BladesCombat.Light6.AnimationId = "rbxassetid://6154060166"
 --
 
 --//Local Things\\
@@ -187,6 +234,17 @@ spawn(function()
     repeat wait()
         for _,v in pairs(char:GetChildren()) do
             if v.Name == 'DrainStamina' or v.Name == 'DrainSprint' or v.Name == 'Hit' or v.Name == 'Hitt' or v.Name == 'Damaged' or v.Name == 'Grounded' or v.Name == 'StayGrounded' or v.Name == 'KnockBack' or v.Name == 'Walled' then
+                v:Destroy()
+            end
+        end
+    until false
+end)
+
+char = game.Players.LocalPlayer.Character
+spawn(function()
+    repeat wait()
+        for _,v in pairs(char:GetChildren()) do
+            if v.Name == 'DrainStamina' or v.Name == 'DrainSprint' or v.Name == 'Hit' or v.Name == 'Hitt' or v.Name == 'Damaged' or v.Name == "Reset" or v.Name == "Grounded" or v.Name == "KnockedBack" or v.Name == "StayGrounded" or v.Name == "DamagedC" then
                 v:Destroy()
             end
         end
@@ -4680,14 +4738,24 @@ warn("If Any Bug Break The Script Let Me Know")
     end
   end--]]
 --
+end)
 end
+end)
 
 
-if game.Players.LocalPlayer.Character:WaitForChild("Type").Value == "Frisk" then
+game.Players.LocalPlayer.PlayerGui.CharacterSelection.Frame.Gui.ChildAdded:connect(function(child)
+if child.Text == "ChaosMaker" then
+	if G_Morph == true then
+	game.ReplicatedStorage.Remotes.Functions:InvokeServer({getrenv()._G.Pass,"ChangeSetting","MorphEnabled",true})
+	end
+child.MouseButton1Click:connect(function()
+if G_Morph == true then
+game.ReplicatedStorage.Remotes.Functions:InvokeServer({getrenv()._G.Pass,"ChangeSetting","MorphEnabled",true})
+end
 wait(0.3)
 --game.Players.LocalPlayer.Character.Head:WaitForChild("HealthBar").Frame.HP:Destroy()
 --game.Players.LocalPlayer.Character.Head.HealthBar.Frame.StaminaBar:Destroy()
-game.Players.LocalPlayer.Character.Head.HealthBar.Frame.PName:Destroy()
+game.Players.LocalPlayer.Character:WaitForChild("Head"):WaitForChild("HealthBar").Frame.PName:Destroy()
 
 
 --//Local Things\\
@@ -4751,6 +4819,17 @@ spawn(function()
     repeat wait()
         for _,v in pairs(char:GetChildren()) do
             if v.Name == 'DrainStamina' or v.Name == 'DrainSprint' or v.Name == 'Hit' or v.Name == 'Hitt' or v.Name == 'Damaged' or v.Name == 'Grounded' or v.Name == 'StayGrounded' or v.Name == 'KnockBack' or v.Name == 'Walled' then
+                v:Destroy()
+            end
+        end
+    until false
+end)
+
+char = game.Players.LocalPlayer.Character
+spawn(function()
+    repeat wait()
+        for _,v in pairs(char:GetChildren()) do
+            if v.Name == 'DrainStamina' or v.Name == 'DrainSprint' or v.Name == 'Hit' or v.Name == 'Hitt' or v.Name == 'Damaged' or v.Name == "Reset" or v.Name == "Grounded" or v.Name == "KnockedBack" or v.Name == "StayGrounded" or v.Name == "DamagedC" then
                 v:Destroy()
             end
         end
@@ -5493,4 +5572,6 @@ end)
 		end)
 
 	warn("Frisk Loaded")
+end)
 end
+end)
