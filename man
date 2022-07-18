@@ -5583,7 +5583,7 @@ local A_1 =
 {
     [1] = getrenv()._G.Pass, 
     [2] = "EquipWeapon", 
-    [3] = "RelKnife"
+    [3] = "RoseSword"
 }
 local Event = game:GetService("ReplicatedStorage").Remotes.FriskMoves
 Event:InvokeServer(A_1)
@@ -6040,12 +6040,12 @@ end)
 mouse.KeyDown:Connect(function(k, typing)
     if typing then return end
 	if k == "6" and InAction == false then
---[[for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
     if v.Name == "RoseSword" then
 		v:Destroy()
 	end
 	
-end--]]
+end
 		local A_1 = 
 {
     [1] = getrenv()._G.Pass, 
@@ -6068,7 +6068,7 @@ local A_1 =
 {
     [1] = getrenv()._G.Pass, 
     [2] = "EquipWeapon", 
-    [3] = "RelKnife"
+    [3] = "RoseKnife"
 }
 local Event = game:GetService("ReplicatedStorage").Remotes.FriskMoves
 Event:InvokeServer(A_1)
