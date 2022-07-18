@@ -4808,11 +4808,11 @@ game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Chat, true)
 if G_Morph == true then
 game.ReplicatedStorage.Remotes.Functions:InvokeServer({getrenv()._G.Pass,"ChangeSetting","MorphEnabled",true})
 end
-wait(0.3)
+wait(0.5)
 --game.Players.LocalPlayer.Character.Head:WaitForChild("HealthBar").Frame.HP:Destroy()
 --game.Players.LocalPlayer.Character.Head.HealthBar.Frame.StaminaBar:Destroy()
 game.Players.LocalPlayer.Character:WaitForChild("Head"):WaitForChild("HealthBar").Frame.PName:Destroy()
-
+wait(0.65)
 --//Animations\\
 --[[game.Players.LocalPlayer.Backpack:WaitForChild("Main"):WaitForChild("FriskMoves").ModuleScript.Animations.BladesCombat.Light1.AnimationId = "rbxassetid://5776230796"
 game.Players.LocalPlayer.Backpack:WaitForChild("Main"):WaitForChild("FriskMoves").ModuleScript.Animations.BladesCombat.Light2.AnimationId = "rbxassetid://4800436094"
@@ -4946,7 +4946,6 @@ game:GetService("Players").LocalPlayer.Character.Head.ChildAdded:Connect(functio
     if r.Name == "DamageShower" then
         task.wait()
         r:Destroy()
-        r:Disconnect()
     end
 end)
 game:GetService("Players").LocalPlayer.Character.Head.ChildAdded:Connect(function(b)
@@ -4955,6 +4954,17 @@ game:GetService("Players").LocalPlayer.Character.Head.ChildAdded:Connect(functio
         b:Destroy()
     end
 end)
+
+coroutine.resume(coroutine.create(function()
+   while true do wait()
+   game:GetService("Players").LocalPlayer.PlayerGui.UI.Ui.ExpBar.Lv.Text = char.Data.Lv.Value
+   if game:GetService("Players").LocalPlayer.PlayerGui.UI.Ui.ExpBar.Lv.Text == "20" then
+    break
+   end
+   end
+end))
+
+--
 
 --//Hide Chat\\
 _G.hidechat = true
