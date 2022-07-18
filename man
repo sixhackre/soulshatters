@@ -6068,7 +6068,7 @@ local A_1 =
 {
     [1] = getrenv()._G.Pass, 
     [2] = "EquipWeapon", 
-    [3] = "RoseKnife"
+    [3] = "RoseSword"
 }
 local Event = game:GetService("ReplicatedStorage").Remotes.FriskMoves
 Event:InvokeServer(A_1)
