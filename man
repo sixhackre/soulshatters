@@ -4222,6 +4222,8 @@ end)
 -----//Rage Things\\----
 local RageActived100 = false
 
+
+
 coroutine.resume(coroutine.create(function()
 while true do wait()
 if Rage > 99 and RageMode == false and RageActived100 == false and InAction == false then
@@ -4249,7 +4251,7 @@ RageActived100 = true
     [1] = getrenv()._G.Pass, 
     [2] = "Chatted", 
     [3] = [[[ External ]
-    I guess i can stop holding back ]],
+    How do you defeat a creature of hatred? ]],
     [4] = Color3.fromRGB(255, 0, 0)
 }
 local Event = game:GetService("ReplicatedStorage").Remotes.Events
@@ -4259,7 +4261,59 @@ local A_1 =  {
     [1] = getrenv()._G.Pass, 
     [2] = "Chatted", 
     [3] = [[[ External ]
-    NOW YOU GONNA DIE!!! ]],
+    That's easy, use love. ]],
+    [4] = Color3.fromRGB(255, 0, 0)
+}
+local Event = game:GetService("ReplicatedStorage").Remotes.Events
+Event:FireServer(A_1)
+wait(3)
+local A_1 =  {
+    [1] = getrenv()._G.Pass, 
+    [2] = "Chatted", 
+    [3] = [[[ External ]
+    But there are two kinds of LOVE... ]],
+    [4] = Color3.fromRGB(255, 0, 0)
+}
+local Event = game:GetService("ReplicatedStorage").Remotes.Events
+Event:FireServer(A_1)
+wait(4)
+local A_1 =  {
+    [1] = getrenv()._G.Pass, 
+    [2] = "Chatted", 
+    [3] = [[[ External ]
+    And unfortunately humans can't tell the difference. ]],
+    [4] = Color3.fromRGB(255, 0, 0)
+}
+local Event = game:GetService("ReplicatedStorage").Remotes.Events
+Event:FireServer(A_1)
+wait(3)
+if game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value ~= nil then
+	local A_1 =  {
+    [1] = getrenv()._G.Pass, 
+    [2] = "Chatted", 
+    [3] = [[[ External ]
+    I promise you something, ]]..game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value.Name,
+    [4] = Color3.fromRGB(255, 0, 0)
+}
+local Event = game:GetService("ReplicatedStorage").Remotes.Events
+Event:FireServer(A_1)
+else
+	local A_1 =  {
+    [1] = getrenv()._G.Pass, 
+    [2] = "Chatted", 
+    [3] = [[[ External ]
+    I promise you something ]],
+    [4] = Color3.fromRGB(255, 0, 0)
+}
+local Event = game:GetService("ReplicatedStorage").Remotes.Events
+Event:FireServer(A_1)
+end
+wait(4)
+local A_1 =  {
+    [1] = getrenv()._G.Pass, 
+    [2] = "Chatted", 
+    [3] = [[[ External ]
+    I will kill you. ]],
     [4] = Color3.fromRGB(255, 0, 0)
 }
 local Event = game:GetService("ReplicatedStorage").Remotes.Events
@@ -4673,7 +4727,7 @@ event:FireServer(v1)
 if OrionLib and not fluxus then
 OrionLib:MakeNotification({
 	Name = "Warn!",
-	Content = "Custom Loaded! V3.5",
+	Content = "External Loaded! V3.5",
 	Image = "rbxassetid://10058283949",
 	Time = 5
 })
@@ -4722,8 +4776,8 @@ local Event = game:GetService("ReplicatedStorage").Remotes.Functions
 Event:InvokeServer(A_1)
 
 
-warn("100% Loaded")
-warn("If Any Bug Break The Script Let Me Know")
+warn("External Custom Loaded")
+warn("If Any Bug Or Error Break The Script Let Me Know")
 
 
 
@@ -4759,6 +4813,14 @@ wait(0.3)
 --game.Players.LocalPlayer.Character.Head.HealthBar.Frame.StaminaBar:Destroy()
 game.Players.LocalPlayer.Character:WaitForChild("Head"):WaitForChild("HealthBar").Frame.PName:Destroy()
 
+--//Animations\\
+--[[game.Players.LocalPlayer.Backpack:WaitForChild("Main"):WaitForChild("FriskMoves").ModuleScript.Animations.BladesCombat.Light1.AnimationId = "rbxassetid://5776230796"
+game.Players.LocalPlayer.Backpack:WaitForChild("Main"):WaitForChild("FriskMoves").ModuleScript.Animations.BladesCombat.Light2.AnimationId = "rbxassetid://4800436094"
+game.Players.LocalPlayer.Backpack:WaitForChild("Main"):WaitForChild("FriskMoves").ModuleScript.Animations.BladesCombat.Light3.AnimationId = "rbxassetid://4348323561"
+game.Players.LocalPlayer.Backpack:WaitForChild("Main"):WaitForChild("FriskMoves").ModuleScript.Animations.BladesCombat.Light4.AnimationId = "rbxassetid://5657143572"
+game.Players.LocalPlayer.Backpack:WaitForChild("Main"):WaitForChild("FriskMoves").ModuleScript.Animations.BladesCombat.Light5.AnimationId = "rbxassetid://5667210178"
+game.Players.LocalPlayer.Backpack:WaitForChild("Main"):WaitForChild("FriskMoves").ModuleScript.Animations.BladesCombat.Light6.AnimationId = "rbxassetid://6154060166"
+--]]
 
 --//Local Things\\
 local Players = game:GetService("Players")
@@ -4783,6 +4845,9 @@ local RageMode = false
 local SpawnedSecSword = false
 local yes = false
 local InAction = false
+if not fluxus then
+OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+end
 
 local TransFormSound = game.ReplicatedStorage.Resources.Sounds.GodTransforms:Clone()
 TransFormSound.Parent = char
@@ -4801,9 +4866,6 @@ local pass = getrenv()._G.Pass
 --//Some Functions\\
 
 game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:Destroy()
-local battling = Instance.new("BoolValue")
-battling.Name = "Battling"
-battling.Parent = game.Players.LocalPlayer.Character
 
       local char = game.Players.LocalPlayer.Character
 spawn(function()
@@ -4845,6 +4907,53 @@ plr:WaitForChild("PlayerGui").ChildAdded:Connect(function(c)
 	if c.Name == "HyperGonerMiniGame" then
 		c:Destroy()
 	end
+end)
+
+local CAS = game:GetService("ContextActionService")
+local FREEZE_COMMAND  = "CantAttack"
+CAS:BindActionAtPriority(
+	FREEZE_COMMAND,
+	function() 
+		return Enum.ContextActionResult.Sink
+	end,
+	false,
+	Enum.ContextActionPriority.High.Value,
+	Enum.KeyCode.E
+
+)
+
+game:GetService("Players").LocalPlayer.Character.Effects.ChildAdded:Connect(function(v)
+    if v.Name == "Cloned" then
+        task.wait()
+        v:Destroy()
+        --print(v)
+    end
+end)
+game:GetService("Players").LocalPlayer.Character.Head.ChildAdded:Connect(function(e)
+    if e.Name == "LevelUp" and e:IsA("Sound") then
+        task.wait()
+        e:Destroy()
+        --print(e)
+    end
+end)
+game:GetService("Players").LocalPlayer.Character.ChildAdded:Connect(function(m)
+    if m.Name == "LevelUpShower" or m.Name == "DrainShield" or m.Name == "ShieldSound" then
+        task.wait()
+        m:Destroy()
+    end
+end)
+game:GetService("Players").LocalPlayer.Character.Head.ChildAdded:Connect(function(r)
+    if r.Name == "DamageShower" then
+        task.wait()
+        r:Destroy()
+        r:Disconnect()
+    end
+end)
+game:GetService("Players").LocalPlayer.Character.Head.ChildAdded:Connect(function(b)
+    if b.Name == "ShieldBlock" or b.Name == "ShieldBlock1" or  b.Name == "ShieldBlock2" or b.Name == "ShieldBlock3" or b.Name == "ShieldBlock4" or b.Name == "ShieldBlock5" or b.Name == "Kick" then
+        task.wait()
+        b:Destroy()
+    end
 end)
 
 --//Hide Chat\\
@@ -4915,6 +5024,8 @@ local pass = getrenv()._G.Pass
 		wait()
 		plr.Character.Humanoid.Health = 1
 warn("50% Loaded")
+game.ReplicatedStorage.RemoteSecurity:Destroy()
+
 
 local functions = remotes:WaitForChild("Functions")
 local plr = plrs.LocalPlayer
@@ -5001,6 +5112,11 @@ game.StarterGui:SetCore("SendNotification", {
 if plr.Character then
 	onChar()
 end
+
+--//Remove Things\\
+plr.Character:WaitForChild("Karma"):Destroy()
+
+--
 
 
 game:GetService("Players").LocalPlayer.PlayerGui.UI.Ui.StaminaBar.Position = UDim2.new(0.001, 0, 0.771, 0)
@@ -5263,42 +5379,211 @@ end
 
 --//Custom m1\\
 
-function animcheck()
-	if localPlayer then
-		local a = localPlayer:GetPlayingAnimationTracks()
-		for i, track in pairs(a) do
-			for _,v in pairs(wlanim) do
-				if v == track.Animation.AnimationId then
-				    camShake:Shake(CameraShaker.Presets.SmallExplosion)
-				elseif track.Animation.AnimationId == "rbxassetid://4348788816" then
-				    if not used then used = true elseif used then break end
-                    task.spawn(function()
-                        glow(0.5)
-                        playsound(Char.HumanoidRootPart,"rbxassetid://6835350802",0.5)
-                        camShake:Shake(CameraShaker.Presets.Explosion)
-                        task.wait(1)
-                        used = false
-                    end)
-			    end
-			end
-		end
-	end
+local Pass = getrenv()._G.Pass
+local Player = game.Players.LocalPlayer
+local hs1 = game:GetService("ReplicatedStorage").Sounds.KnifeHit
+local CurrentCharacter = Player.PlayerData.CurrentCharacter.Value
+Settings = {
+    M1_Settings = {
+        Amount = 6, -- does nothing
+        Range = 14,
+        Damage = 10,
+        HitEffect = "KnifeHitEffect",
+        HitSound = hs1,
+        Velocity = Vector3.new(0,0,0),
+        HitTime = 1,
+        CombatInv = true,
+        ComboResetTimer = 1.5,
+        Blur = true,
+        CameraShake = true,
+        CamShakePreset = "Bump",
+        LastHitKnockback = true, -- havent added (probably gonna delete)
+        RandomAnimation = false -- havent added
+    };
+    Knockback_Settings = {
+        Damage = 25,
+        HitType = "KnifeHitEffect",
+        HurtAnimation = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Knockback2,
+        Velocity = Vector3.new(0,0,0),
+        HitTime = 1,
+        CombatInv = true,
+        Blur = true,
+        CameraShake = true,
+        CamShakePreset = "Explosion",
+        RandomAnimation = false -- havent added
+    };
+    Client_Settings = {
+        DeathScene = false,
+        CameraShake = true,
+        Music = true, -- havent added
+        EffectsIntensity = 300,
+        ComboResetNotificiation = true
+    };
+}
+
+Animations = {
+    M1_Animations = { -- Last animation should be a knockback animation
+        [1] = "rbxassetid://6546406634",
+        [2] = "rbxassetid://6547224791",
+        [3] = "rbxassetid://6547356057",
+        [4] = "rbxassetid://6547635642",
+        [5] = "rbxassetid://6547714151" 
+    };
+}
+
+
+local CustomChaosM1 = true
+game:GetService("ReplicatedStorage").Remotes.Functions:InvokeServer({Pass, "ChangeSetting", "CameraShake", Settings.Client_Settings.CameraShake})
+game:GetService("ReplicatedStorage").Remotes.Functions:InvokeServer({Pass, "ChangeSetting", "DeathScene", Settings.Client_Settings.DeathScene})
+Player.PlayerScripts.EffectsHandler.Mag.Value = Settings.Client_Settings.EffectsIntensity
+if CustomChaosM1 == true then
+for i,v in pairs(Player.Backpack.Main[CurrentCharacter.."Moves"].ModuleScript.Animations:GetChildren()) do 
+    v:ClearAllChildren()
+end
 end
 
+local folder = Instance.new("Folder")
+folder.Name = "MoveDebounce"
+folder.Parent = CooldownFolder
 local UIS = game:GetService("UserInputService")
-UIS.InputBegan:Connect(function(input, IsTyping)
-    if IsTyping then return end 
-    if input.UserInputType == Enum.UserInputType.MouseButton1 then
-        wait()
-        animcheck()
+local MainModule = require(game.ReplicatedStorage.ClientModules.MainModule)
+local Mouse = Player:GetMouse()
+local combo = 0
+local m1anims = Animations.M1_Animations
+local m1settings = Settings.M1_Settings
+local M1Debounce = false
+local Disabled = false
+local t = tick()
+function Notification(title, text)
+    game:GetService("StarterGui"):SetCore("SendNotification", {Title = title, Text = text})
+end
+
+function StopRunning()
+local args = {
+    [1] = {
+        [1] = Pass,
+        [2] = "Running",
+        [3] = false
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.Functions:InvokeServer(unpack(args))
+end
+
+function DamageBlur()
+    task.spawn(function()
+        game.Lighting.Blur.Size = 16
+        for i = 1, 5 do 
+           game.Lighting.Blur.Size = game.Lighting.Blur.Size - 2
+           task.wait(0.03)
+        end
+    end)
+end
+
+
+function PlayAnimation(animationid, speed)
+    local animation = Instance.new("Animation")
+    animation.AnimationId = animationid
+    local anim = Player.Character.Humanoid.Animator:LoadAnimation(animation)
+    anim:Play()
+    anim:AdjustSpeed(speed)
+    return anim
+end
+
+function M1()
+    if combo == #m1anims then combo = 0 end
+    if combo < (#m1anims-1) then combo += 1 else Disabled = true task.delay(2, function() Disabled = false end) combo = #m1anims end
+    PlayAnimation(m1anims[combo], 1.25) StopRunning()
+    print(combo)
+    t = tick()
+    task.delay(m1settings.ComboResetTimer,function()
+	    if (tick() - t) >= m1settings.ComboResetTimer and combo >= 1 and combo ~= #m1anims then
+            combo = 0
+            if Settings.Client_Settings.ComboResetNotificiation == true then
+               warn("Click Reset")
+            end
+	    end
+    end)
+    task.wait()
+    for i,v in pairs(game.Workspace:GetChildren()) do 
+        if v ~= Player.Character and v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v:FindFirstChild("Data") then
+            local vector = (Player.Character.HumanoidRootPart.Position - v.HumanoidRootPart.Position)
+            if vector.Magnitude <= Settings.M1_Settings.Range and vector:Dot(Player.Character.HumanoidRootPart.CFrame.lookVector) <= -1 then
+                if combo < #m1anims then
+                local M1Settings = Settings.M1_Settings
+                M1Settings.Velocity = Player.Character.HumanoidRootPart.CFrame.lookVector * 1
+                local args = { [1] = { [1] = getrenv()._G.Pass, [2] = "PlaySound", [3] = game:GetService("ReplicatedStorage").Sounds.Swing, [4] = game:GetService("Players").LocalPlayer.Character.Head } }
+                game:GetService("ReplicatedStorage").Remotes.Functions:InvokeServer(unpack(args))
+                local args = {
+                    [1] = Pass,
+                    [2] = v,
+                    [3] = {
+                        ["HitTime"] = M1Settings.HitTime, 
+                        ["Type"] = "Normal", 
+                        ["HitEffect"] = M1Settings.HitEffect, 
+                        ["CombatInv"] = M1Settings.CombatInv,
+                        ["HurtAnimation"] = game.ReplicatedStorage.Animations.HurtAnimations["Hurt"..tostring(math.random(1,3))], 
+                        ["Velocity"] = M1Settings.Velocity, 
+                        ["BlockAble"] = false,
+                        ["Sound"] = M1Settings.HitSound,
+                        ["Damage"] = M1Settings.Damage
+                    }
+                }
+                game:GetService("ReplicatedStorage").Remotes.Damage:InvokeServer(unpack(args))
+                if M1Settings.CameraShake == true then MainModule.shakeScreen(M1Settings.CamShakePreset) end
+                if M1Settings.Blur == true then DamageBlur() end
+                break
+            else
+                local KnockbackSettings = Settings.Knockback_Settings
+                KnockbackSettings.Velocity = Player.Character.HumanoidRootPart.CFrame.lookVector * 50 + Vector3.new(0,5,0)
+                local A_1 = Pass
+                local A_2 = v
+                local A_3 = 
+                    {
+                        ["HitTime"] = KnockbackSettings.HitTime,
+                        ["Type"] = "Knockback", 
+                        ["HitEffect"] = "HeavyHitEffect",
+                        ["HurtAnimation"] = KnockbackSettings.HurtAnimation,  
+                        ["Sound"] = game:GetService("ReplicatedStorage").Sounds.Knockback,
+                        ["CameraShake"] = "BigExplosion",
+                        ["Velocity"] = KnockbackSettings.Velocity,
+                        ["BlockAble"] = false,
+                        ["CombatInv"] = KnockbackSettings.CombatInv,
+                        ["Damage"] = KnockbackSettings.Damage
+                    }
+                local Event = game:GetService("ReplicatedStorage").Remotes.Damage
+                Event:InvokeServer(A_1, A_2, A_3)
+                if KnockbackSettings.CameraShake == true then MainModule.shakeScreen(KnockbackSettings.CamShakePreset) end
+                if KnockbackSettings.Blur == true then DamageBlur() end
+                break
+            end
+            end
+        end
     end
+end
+
+if CustomChaosM1 == true then 
+local M1Event = Mouse.Button1Down:Connect(function()
+	if not M1Debounce and not Disabled then 
+		M1Debounce = true
+        M1()
+        task.delay(0.010,function()
+            M1Debounce = false
+        end)
+	end
 end)
+end
+
+
+
+
+--
 
 local A_1 = 
 {
     [1] = getrenv()._G.Pass, 
     [2] = "EquipWeapon", 
-    [3] = "RealKnife"
+    [3] = "RelKnife"
 }
 local Event = game:GetService("ReplicatedStorage").Remotes.FriskMoves
 Event:InvokeServer(A_1)
@@ -5319,7 +5604,14 @@ local A_1 =
 }
 local Event = game:GetService("ReplicatedStorage").Remotes.FriskMoves
 Event:InvokeServer(A_1)
-
+--[[local A_1 = 
+{
+    [1] = getrenv()._G.Pass, 
+    [2] = "EquipWeapon", 
+    [3] = "RoseSword"
+}
+local Event = game:GetService("ReplicatedStorage").Remotes.FriskMoves
+Event:InvokeServer(A_1)--]]
 --
 
 --//Character Stuff\\
@@ -5569,14 +5861,48 @@ end
 end
 end)
 
+local char = game.Players.LocalPlayer.Character
+if not char:FindFirstChild("OverwriteButton") then
+			local button = game.ReplicatedStorage.Effects.OverwriteButton:Clone()
+			button:SetPrimaryPartCFrame(char.HumanoidRootPart.CFrame)
+			local weld = Instance.new("WeldConstraint")
+			weld.Part0 = button.HumanoidRootPart
+			weld.Part1 = char.HumanoidRootPart
+			weld.Parent = button
+			button.Parent = char
+			local anim = button.AnimationController:LoadAnimation(button.Idle2)
+			anim:Play()
+			button.OverwriteButton.Spawn:Play()
+			button.OverwriteButton.Sound:Play()
+			task.wait(.14)
+			for i,v in pairs(button.OverwriteButton:GetChildren()) do
+				if v:IsA("ParticleEmitter") then
+					v.Enabled = false
+				end
+			end
+			button.OverwriteButton.Color = Color3.fromRGB(255,0,0)
+			for i,v in pairs(button:GetDescendants()) do
+				if v:IsA("ParticleEmitter") then
+					v.Color = ColorSequence.new(Color3.new(1,0,0))
+				elseif v:IsA("PointLight") then
+					v.Color = Color3.fromRGB(100,0,0)
+				elseif v:IsA("ImageLabel") then
+					v.Image = "rbxassetid://8286566767"
+				end
+				end
+			end
+
 --
 
 --//Attacks\\
+moves = game.Players.LocalPlayer.PlayerGui.UI.Ui.MoveDebounceShower
+pass = getrenv()._G.Pass
 local mouse = game.Players.LocalPlayer:GetMouse()
 mouse.KeyDown:Connect(function(k, typing)
     if typing then return end
 	if k == "p" then
 print("k")
+game:GetService("ReplicatedStorage").Resources.Character.CustomMusic.My.TransformedPlaylist["1Bunny"].Looped = true
  local function getlockchar2()
 		 for _,v in pairs(game.workspace:GetChildren()) do
                 if v:FindFirstChildOfClass('Humanoid') and v ~= char and v:FindFirstChild('HumanoidRootPart') and v:FindFirstChild("Humanoid").Health > 0 and v:FindFirstChild("Type").Value ~= "Sans" then
@@ -5605,13 +5931,168 @@ wait(0.3)
 	end
 	end)
 
+	local mouse = game.Players.LocalPlayer:GetMouse()
+mouse.KeyDown:Connect(function(k, typing)
+    if typing then return end
+	if k == "1" and InAction == false then
+
+function getNil(name,class) for _,v in pairs(getnilinstances())do if v.ClassName==class and v.Name==name then return v;end end end
+
+local args = {
+    [1] = {
+        [1] = getrenv()._G.Pass,
+        [2] = "ToyKnifeCombo"
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.FriskMoves:InvokeServer(unpack(args))
+
+end
+end)
+
+	local mouse = game.Players.LocalPlayer:GetMouse()
+mouse.KeyDown:Connect(function(k, typing)
+    if typing then return end
+	if k == "2" and InAction == false then
+function getNil(name,class) for _,v in pairs(getnilinstances())do if v.ClassName==class and v.Name==name then return v;end end end
+
+local args = {
+    [1] = {
+        [1] = getrenv()._G.Pass,
+        [2] = "RealKnifeBaragge"
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.FriskMoves:InvokeServer(unpack(args))
+end
+end)
+
+	local mouse = game.Players.LocalPlayer:GetMouse()
+mouse.KeyDown:Connect(function(k, typing)
+    if typing then return end
+	if k == "3" and InAction == false then
+function getNil(name,class) for _,v in pairs(getnilinstances())do if v.ClassName==class and v.Name==name then return v;end end end
+
+local args = {
+    [1] = {
+        [1] = getrenv()._G.Pass,
+        [2] = "RealKnifeSlashes"
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.FriskMoves:InvokeServer(unpack(args))
+end
+end)
+
+	local mouse = game.Players.LocalPlayer:GetMouse()
+mouse.KeyDown:Connect(function(k, typing)
+    if typing then return end
+	if k == "4" and InAction == false then
+
+function getNil(name,class) for _,v in pairs(getnilinstances())do if v.ClassName==class and v.Name==name then return v;end end end
+
+local args = {
+    [1] = {
+        [1] = getrenv()._G.Pass,
+        [2] = "RealKnifeBigSlash"
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.FriskMoves:InvokeServer(unpack(args))
+
+end
+end)
+
+	local mouse = game.Players.LocalPlayer:GetMouse()
+mouse.KeyDown:Connect(function(k, typing)
+    if typing then return end
+	if k == "5" and InAction == false then
+
+function getNil(name,class) for _,v in pairs(getnilinstances())do if v.ClassName==class and v.Name==name then return v;end end end
+
+local args = {
+    [1] = {
+        [1] = getrenv()._G.Pass,
+        [2] = "ToughGloves",
+        [3] = "PunchBarrage"
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.FriskMoves:InvokeServer(unpack(args))
+wait(0.7)
+
+function getNil(name,class) for _,v in pairs(getnilinstances())do if v.ClassName==class and v.Name==name then return v;end end end
+
+local args = {
+    [1] = {
+        [1] = getrenv()._G.Pass,
+        [2] = "RealKnifeBigSlash"
+    }
+}
+
+game:GetService("ReplicatedStorage").Remotes.FriskMoves:InvokeServer(unpack(args))
+
+
+end
+end)
+
+	local mouse = game.Players.LocalPlayer:GetMouse()
+mouse.KeyDown:Connect(function(k, typing)
+    if typing then return end
+	if k == "6" and InAction == false then
+--[[for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+    if v.Name == "RoseSword" then
+		v:Destroy()
+	end
+	
+end--]]
+		local A_1 = 
+{
+    [1] = getrenv()._G.Pass, 
+    [2] = "EquipWeapon", 
+    [3] = "EmptyGun"
+}
+local Event = game:GetService("ReplicatedStorage").Remotes.FriskMoves
+Event:InvokeServer(A_1)
+for i = 1,6 do
+local A_1 = 
+{
+	[1] = getrenv()._G.Pass, 
+	[2] = "GunShot", 
+	[3] = "Light", 
+	[4] = game.Players.LocalPlayer.Character['Right Arm'].CFrame * CFrame.new(0, -0.4, 0)
+}
+game:GetService("ReplicatedStorage").Remotes.FriskMoves:InvokeServer(A_1)
+end
+local A_1 = 
+{
+    [1] = getrenv()._G.Pass, 
+    [2] = "EquipWeapon", 
+    [3] = "RelKnife"
+}
+local Event = game:GetService("ReplicatedStorage").Remotes.FriskMoves
+Event:InvokeServer(A_1)
+end
+end)
+
+
+
 
 
 		pcall(function()
 			remotes.Functions:InvokeServer({pass, "Reset"})
 		end)
+if OrionLib and not fluxus then
+OrionLib:MakeNotification({
+	Name = "Warn!",
+	Content = "Chaos Maker Loaded! V2.5",
+	Image = "rbxassetid://10058283949",
+	Time = 5
+})
+end
+	warn("Chaos Maker Loaded")
+	warn("If Any Bug Or Error Break The Script Let Me Know")
 
-	warn("Frisk Loaded")
 	    
 end)
 end
