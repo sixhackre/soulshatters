@@ -1130,16 +1130,18 @@ else
 if v:FindFirstChild("Humanoid").Health > 0 then
                             local A_1 = getrenv()._G.Pass
                             local A_2 = v
-                            local A_3 =  {
-                                ["Type"] = "Knockback",
-                                ["HitEffect"] = "HeavyHitEffect", 
-                                ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.Clashing, 
-                                ["Velocity"] = Vector3.new(0, -1, 0), 
-                                ["HitTime"] = 1, 
-                                ["CombatInv"] = true, 
-                                ["Sound"] = game:GetService("ReplicatedStorage").RogueSounds.BaneDischarge, 
-                                ["Damage"] = "NaN"
-                            }
+                            local A_3 = {
+                    ["HitTime"] = 1, 
+                    ["Type"] = "Knockback", 
+                    ["HitEffect"] = "KnifeHitEffect", 
+                    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+                    ["Velocity"] = Vector3.new(0, -1, 0),
+                    ["CombatInv"] = true,
+                    ["Effect"] = "SussyDmg",
+                    ["BlockAble"] = false,
+                    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit, 
+                    ["Damage"] = "NaN"
+                }
                             local Event = game:GetService("ReplicatedStorage").Remotes.Damage
                             Event:InvokeServer(A_1, A_2, A_3)
 							wait(0.2)
@@ -1165,6 +1167,158 @@ end))
 --
 
 --//Random Func\\
+
+spawn(function()
+player = game.Players.LocalPlayer
+char = player.Character
+for _,v in pairs(char:GetDescendants()) do
+if v.Name == 'RightArmWeld' then
+v:Destroy()
+end
+end
+end)
+
+spawn(function()
+player = game.Players.LocalPlayer
+char = player.Character
+for _,v in pairs(char:GetDescendants()) do
+if v.Name == 'LeftArmWeld' then
+v:Destroy()
+end
+end
+end)
+
+spawn(function()
+player = game.Players.LocalPlayer
+char = player.Character
+for _,v in pairs(char:GetDescendants()) do
+if v.Name == 'RightLegWeld' then
+v:Destroy()
+end
+end
+end)
+
+spawn(function()
+player = game.Players.LocalPlayer
+char = player.Character
+for _,v in pairs(char:GetDescendants()) do
+if v.Name == 'LeftLegWeld' then
+v:Destroy()
+end
+end
+end)
+
+spawn(function()
+player = game.Players.LocalPlayer
+char = player.Character
+for _,v in pairs(char:GetDescendants()) do
+if v.Name == 'TorsoWeld' then
+v:Destroy()
+end
+end
+end)
+wait(0.5)
+
+spawn(function()
+player = game.Players.LocalPlayer
+char = player.Character
+for _,v in pairs(char:GetDescendants()) do
+if v.Name == 'RightArmWeld' then
+v:Destroy()
+end
+end
+end)
+
+spawn(function()
+player = game.Players.LocalPlayer
+char = player.Character
+for _,v in pairs(char:GetDescendants()) do
+if v.Name == 'LeftArmWeld' then
+v:Destroy()
+end
+end
+end)
+
+spawn(function()
+player = game.Players.LocalPlayer
+char = player.Character
+for _,v in pairs(char:GetDescendants()) do
+if v.Name == 'RightLegWeld' then
+v:Destroy()
+end
+end
+end)
+
+spawn(function()
+player = game.Players.LocalPlayer
+char = player.Character
+for _,v in pairs(char:GetDescendants()) do
+if v.Name == 'LeftLegWeld' then
+v:Destroy()
+end
+end
+end)
+
+spawn(function()
+player = game.Players.LocalPlayer
+char = player.Character
+for _,v in pairs(char:GetDescendants()) do
+if v.Name == 'TorsoWeld' then
+v:Destroy()
+end
+end
+end)
+wait(0.5)
+
+spawn(function()
+player = game.Players.LocalPlayer
+char = player.Character
+for _,v in pairs(char:GetDescendants()) do
+if v.Name == 'RightArmWeld' then
+v:Destroy()
+end
+end
+end)
+
+spawn(function()
+player = game.Players.LocalPlayer
+char = player.Character
+for _,v in pairs(char:GetDescendants()) do
+if v.Name == 'LeftArmWeld' then
+v:Destroy()
+end
+end
+end)
+
+spawn(function()
+player = game.Players.LocalPlayer
+char = player.Character
+for _,v in pairs(char:GetDescendants()) do
+if v.Name == 'RightLegWeld' then
+v:Destroy()
+end
+end
+end)
+
+spawn(function()
+player = game.Players.LocalPlayer
+char = player.Character
+for _,v in pairs(char:GetDescendants()) do
+if v.Name == 'LeftLegWeld' then
+v:Destroy()
+end
+end
+end)
+
+spawn(function()
+player = game.Players.LocalPlayer
+char = player.Character
+for _,v in pairs(char:GetDescendants()) do
+if v.Name == 'TorsoWeld' then
+v:Destroy()
+end
+end
+end)
 
 function YellowSlashs()
    local args = {
@@ -1282,6 +1436,21 @@ game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args
 game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
 game:GetService("ReplicatedStorage").Remotes.CharaMoves:InvokeServer(unpack(args))
                     end
+end
+
+
+local phase = Instance.new('NumberValue')
+phase.Parent = game.Players.LocalPlayer.Character
+phase.Value = 0
+phase.Name = 'antifling'
+if game.Players.LocalPlayer.Character.antifling.Value == 0 then
+game.Players.LocalPlayer.Character.antifling.Value = 0
+char = game.Players.LocalPlayer.Character
+        local vel = Instance.new('BodyVelocity',char.HumanoidRootPart)
+        vel.Name = 'Client'
+        vel.MaxForce = Vector3.new(4000,4000,4000)*math.huge
+        vel.P = math.huge
+        vel.Velocity = Vector3.new(0,0,0)
 end
 
 function orbs()
@@ -2520,24 +2689,72 @@ local k = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(Anim)
 if game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value ~= nil then
 k:Play()
 end
+
 	local A_1 = pass
 	local A_2 = target
 	local A_3 = {
-		["HitTime"] = 1,
-		["Type"] = "Knockback", 
-		["HitEffect"] = "KnifeHitEffect",
-		["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3,  
-		["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit,
-		["CombatInv"] = true,
-		["Velocity"] = Vector3.new(0, -1, 0),
-		["Damage"] = "NaN"
-	}
+                    ["HitTime"] = 1, 
+                    ["Type"] = "Knockback", 
+                    ["HitEffect"] = "KnifeHitEffect", 
+                    ["HurtAnimation"] = game:GetService("ReplicatedStorage").Animations.HurtAnimations.Hurt3, 
+                    ["Velocity"] = Vector3.new(0, -1, 0),
+                    ["CombatInv"] = true,
+                    ["Effect"] = "SussyDmg",
+                    ["BlockAble"] = false,
+                    ["Sound"] = game:GetService("ReplicatedStorage").Sounds.KnifeHit, 
+                    ["Damage"] = "NaN"
+                }
 	local Event = game:GetService("ReplicatedStorage").Remotes.Damage
 	            if game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value ~= nil then
         Event:InvokeServer(A_1, A_2, A_3)
             end
 end
 end)
+
+local mouse = game.Players.LocalPlayer:GetMouse()
+mouse.KeyDown:Connect(function(k, typing)
+    if typing then return end
+	if k == "j" and not Player.Backpack.Main.LockOnScript.LockOn.Value ~= nil and InAction == false then
+local part = Instance.new("Part")
+part.Parent = Game.Workspace
+part.Anchored = true
+part.Position = Vector3.new(20.4143,-143.366,3483.62)
+part.Size = Vector3.new(16,1.2,16)
+part.Name = "FlignPart"
+local part = Instance.new("Part")
+part.Parent = Game.Workspace
+part.Anchored = true
+part.CanCollide = falsed
+part.Size = Vector3.new(0.1,0.2,0.1)
+part.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+part.Name = "tp"
+wait(5)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(20.4143,-141.366,3483.62) 
+wait(0.2)
+spawn(function()
+        local LockOn = game.Players.LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+        m = game.Players.LocalPlayer:GetMouse()
+        if LockOn then
+            target = LockOn
+            r2 = target.HumanoidRootPart.CFrame
+        elseif not LockOn then
+            r2 = m.Hit * CFrame.new(0, 4, 0)
+        end
+        local A_1 = {
+            [1] = getrenv()._G.Pass,
+            [2] = "PatienceAttack",
+            [3] = r2.p,
+            [4] = game:GetService("Players").LocalPlayer.Backpack.Main.LockOnScript.LockOn.Value
+        }
+        local Event = game:GetService("ReplicatedStorage").Remotes.CharaMoves
+        Event:InvokeServer(A_1)
+end)
+wait(3.5)
+game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Workspace.tp.CFrame
+game.Workspace.tp:Destroy()
+game.Workspace.FlignPart:Destroy()
+	end
+	end)
 
 
 local mouse = game.Players.LocalPlayer:GetMouse()
@@ -4867,6 +5084,173 @@ local pass = getrenv()._G.Pass
 
 game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:Destroy()
 
+spawn(function()
+player = game.Players.LocalPlayer
+char = player.Character
+for _,v in pairs(char:GetDescendants()) do
+if v.Name == 'RightArmWeld' then
+v:Destroy()
+end
+end
+end)
+
+spawn(function()
+player = game.Players.LocalPlayer
+char = player.Character
+for _,v in pairs(char:GetDescendants()) do
+if v.Name == 'LeftArmWeld' then
+v:Destroy()
+end
+end
+end)
+
+spawn(function()
+player = game.Players.LocalPlayer
+char = player.Character
+for _,v in pairs(char:GetDescendants()) do
+if v.Name == 'RightLegWeld' then
+v:Destroy()
+end
+end
+end)
+
+spawn(function()
+player = game.Players.LocalPlayer
+char = player.Character
+for _,v in pairs(char:GetDescendants()) do
+if v.Name == 'LeftLegWeld' then
+v:Destroy()
+end
+end
+end)
+
+spawn(function()
+player = game.Players.LocalPlayer
+char = player.Character
+for _,v in pairs(char:GetDescendants()) do
+if v.Name == 'TorsoWeld' then
+v:Destroy()
+end
+end
+end)
+wait(0.5)
+
+spawn(function()
+player = game.Players.LocalPlayer
+char = player.Character
+for _,v in pairs(char:GetDescendants()) do
+if v.Name == 'RightArmWeld' then
+v:Destroy()
+end
+end
+end)
+
+spawn(function()
+player = game.Players.LocalPlayer
+char = player.Character
+for _,v in pairs(char:GetDescendants()) do
+if v.Name == 'LeftArmWeld' then
+v:Destroy()
+end
+end
+end)
+
+spawn(function()
+player = game.Players.LocalPlayer
+char = player.Character
+for _,v in pairs(char:GetDescendants()) do
+if v.Name == 'RightLegWeld' then
+v:Destroy()
+end
+end
+end)
+
+spawn(function()
+player = game.Players.LocalPlayer
+char = player.Character
+for _,v in pairs(char:GetDescendants()) do
+if v.Name == 'LeftLegWeld' then
+v:Destroy()
+end
+end
+end)
+
+spawn(function()
+player = game.Players.LocalPlayer
+char = player.Character
+for _,v in pairs(char:GetDescendants()) do
+if v.Name == 'TorsoWeld' then
+v:Destroy()
+end
+end
+end)
+wait(0.5)
+
+spawn(function()
+player = game.Players.LocalPlayer
+char = player.Character
+for _,v in pairs(char:GetDescendants()) do
+if v.Name == 'RightArmWeld' then
+v:Destroy()
+end
+end
+end)
+
+spawn(function()
+player = game.Players.LocalPlayer
+char = player.Character
+for _,v in pairs(char:GetDescendants()) do
+if v.Name == 'LeftArmWeld' then
+v:Destroy()
+end
+end
+end)
+
+spawn(function()
+player = game.Players.LocalPlayer
+char = player.Character
+for _,v in pairs(char:GetDescendants()) do
+if v.Name == 'RightLegWeld' then
+v:Destroy()
+end
+end
+end)
+
+spawn(function()
+player = game.Players.LocalPlayer
+char = player.Character
+for _,v in pairs(char:GetDescendants()) do
+if v.Name == 'LeftLegWeld' then
+v:Destroy()
+end
+end
+end)
+
+spawn(function()
+player = game.Players.LocalPlayer
+char = player.Character
+for _,v in pairs(char:GetDescendants()) do
+if v.Name == 'TorsoWeld' then
+v:Destroy()
+end
+end
+end)
+
+local phase = Instance.new('NumberValue')
+phase.Parent = game.Players.LocalPlayer.Character
+phase.Value = 0
+phase.Name = 'antifling'
+if game.Players.LocalPlayer.Character.antifling.Value == 0 then
+game.Players.LocalPlayer.Character.antifling.Value = 0
+char = game.Players.LocalPlayer.Character
+        local vel = Instance.new('BodyVelocity',char.HumanoidRootPart)
+        vel.Name = 'Client'
+        vel.MaxForce = Vector3.new(4000,4000,4000)*math.huge
+        vel.P = math.huge
+        vel.Velocity = Vector3.new(0,0,0)
+end
+
+
       local char = game.Players.LocalPlayer.Character
 spawn(function()
     repeat wait()
@@ -5902,16 +6286,93 @@ if not char:FindFirstChild("OverwriteButton") then
 				end
 			end
 
+--//Bracelets\\
+
+local rainbow = false 
+
+
+game:GetObjects("rbxassetid://9600362931")[1].Parent = game.Players.LocalPlayer.Character
+game.Players.LocalPlayer.Character.Bracelets.Script:Destroy()
+
+
+local cf0 = CFrame.new(0,-0.4,0) * CFrame.Angles(0,0,0)
+ 
+local pa1 = Instance.new("Motor",game.Players.LocalPlayer.Character["Left Arm"])
+pa1.Name = "weld1"
+pa1.Part0 = game.Players.LocalPlayer.Character.Bracelets.Bracelet1.Inner
+pa1.Part1 = game.Players.LocalPlayer.Character["Left Arm"]
+pa1.C0 = cf0:Inverse()
+
+local pa2 = Instance.new("Motor",game.Players.LocalPlayer.Character["Left Arm"])
+pa2.Name = "weld2"
+pa2.Part0 = game.Players.LocalPlayer.Character.Bracelets.Bracelet1.Outer
+pa2.Part1 = game.Players.LocalPlayer.Character["Left Arm"]
+pa2.C0 = cf0:Inverse()
+
+local pa3 = Instance.new("Motor",game.Players.LocalPlayer.Character["Right Arm"])
+pa3.Name = "weld3"
+pa3.Part0 = game.Players.LocalPlayer.Character.Bracelets.Bracelet2.Inner
+pa3.Part1 = game.Players.LocalPlayer.Character["Right Arm"]
+pa3.C0 = cf0:Inverse()
+
+local pa4 = Instance.new("Motor",game.Players.LocalPlayer.Character["Right Arm"])
+pa4.Name = "weld4"
+pa4.Part0 = game.Players.LocalPlayer.Character.Bracelets.Bracelet2.Outer
+pa4.Part1 = game.Players.LocalPlayer.Character["Right Arm"]
+pa4.C0 = cf0:Inverse()
+
+if not rainbow then
+spawn(function()
+	local lol = Instance.new('Color3Value')
+	lol.Parent = game:GetService("Players").LocalPlayer.Character.Bracelets
+	lol.Name = 'yee'
+	lol.Value = Color3.fromHSV(0.725,1,1) -- tween to 0.8
+	spawn(function()
+		local ti = TweenInfo.new(
+			2.5, -- Time
+			Enum.EasingStyle.Sine, -- EasingStyle
+			Enum.EasingDirection.InOut, -- EasingDirection
+			-1, -- RepeatCount (when less than zero the tween will loop indefinitely)
+			true, -- Reverses (tween will reverse once reaching it's goal)
+			0.5 -- DelayTime
+		)
+
+		local tween1 = game:GetService('TweenService'):Create(lol, ti, {Value = Color3.fromHSV(0.8,1,1)})
+		tween1:Play()
+	end)
+while task.wait() do
+		game:GetService("Players").LocalPlayer.Character.Bracelets.Bracelet1.Inner.Color = lol.Value
+		game:GetService("Players").LocalPlayer.Character.Bracelets.Bracelet2.Inner.Color = lol.Value
+		game:GetService("Players").LocalPlayer.Character.Bracelets.Bracelet1.Outer.Color = lol.Value
+		game:GetService("Players").LocalPlayer.Character.Bracelets.Bracelet2.Outer.Color = lol.Value
+end
+end)
+else
+spawn(function()
+while true do
+for i = 0,1,0.01 do
+    wait()
+		game:GetService("Players").LocalPlayer.Character.Bracelets.Bracelet1.Inner.Color = Color3.fromHSV(i,1,1)
+		game:GetService("Players").LocalPlayer.Character.Bracelets.Bracelet2.Inner.Color = Color3.fromHSV(i,1,1)
+		game:GetService("Players").LocalPlayer.Character.Bracelets.Bracelet1.Outer.Color = Color3.fromHSV(i,1,1)
+		game:GetService("Players").LocalPlayer.Character.Bracelets.Bracelet2.Outer.Color = Color3.fromHSV(i,1,1)
+end
+end
+end)
+end
+
 --
 
 --//Attacks\\
 moves = game.Players.LocalPlayer.PlayerGui.UI.Ui.MoveDebounceShower
 pass = getrenv()._G.Pass
+local Pos = {}
 local mouse = game.Players.LocalPlayer:GetMouse()
 mouse.KeyDown:Connect(function(k, typing)
     if typing then return end
 	if k == "p" then
 print("k")
+game:GetService("ReplicatedStorage").Resources.Character.CustomMusic.My.TransformedPlaylist["1Bunny"].Volume = 5
 game:GetService("ReplicatedStorage").Resources.Character.CustomMusic.My.TransformedPlaylist["1Bunny"].Looped = true
  local function getlockchar2()
 		 for _,v in pairs(game.workspace:GetChildren()) do
@@ -5921,6 +6382,9 @@ game:GetService("ReplicatedStorage").Resources.Character.CustomMusic.My.Transfor
         end 
 		 end
 		 end
+table.insert(Pos, game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
+table.remove(Pos, 1)
+wait(0.3)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = getlockchar2().HumanoidRootPart.CFrame * CFrame.new(0,0,3)
 wait(0.3)
 	local args = {
@@ -5938,6 +6402,8 @@ wait(0.3)
             }
         }
 		 game:GetService("ReplicatedStorage").Remotes.Damage:InvokeServer(unpack(args))
+		 wait(0.2)
+         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Pos[1]
 	end
 	end)
 
