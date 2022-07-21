@@ -2714,6 +2714,30 @@ end)
 local mouse = game.Players.LocalPlayer:GetMouse()
 mouse.KeyDown:Connect(function(k, typing)
     if typing then return end
+	if k == "h" and InAction == false then
+		local A_1 = 
+			{
+				[1] = getrenv()._G.Pass,
+				[2] = "Chatted", 
+				[3] = [[ [ External ] *
+-GodMode lock on- ]], 
+				[4] = Color3.new(1,1,1)
+			}
+		local Event = game:GetService("ReplicatedStorage").Remotes.Events
+		Event:FireServer(A_1) 
+            while wait(1) do
+                for i, v in pairs(game.Players:GetChildren()) do
+					if not v.Name == Player.Name then 
+                    v.Character.Humanoid.Health = math.huge
+					end
+                end
+            end
+	end
+	end)
+
+local mouse = game.Players.LocalPlayer:GetMouse()
+mouse.KeyDown:Connect(function(k, typing)
+    if typing then return end
 	if k == "j" and not Player.Backpack.Main.LockOnScript.LockOn.Value ~= nil and InAction == false then
 local part = Instance.new("Part")
 part.Parent = Game.Workspace
@@ -6382,8 +6406,8 @@ game:GetService("ReplicatedStorage").Resources.Character.CustomMusic.My.Transfor
         end 
 		 end
 		 end
+		 
 table.insert(Pos, game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame)
-table.remove(Pos, 1)
 wait(0.3)
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = getlockchar2().HumanoidRootPart.CFrame * CFrame.new(0,0,3)
 wait(0.3)
@@ -6404,6 +6428,7 @@ wait(0.3)
 		 game:GetService("ReplicatedStorage").Remotes.Damage:InvokeServer(unpack(args))
 		 wait(0.2)
          game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = Pos[1]
+		 table.remove(Pos, 1)
 	end
 	end)
 
