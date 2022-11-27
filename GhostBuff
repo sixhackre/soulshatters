@@ -1,0 +1,16 @@
+local passes = game.Players.LocalPlayer.Stats
+local passes2 = game.Players.LocalPlayer.Stats.AppliedPasses
+
+game.Players.LocalPlayer.Stats.MagnetismUnlocked.Value = true
+game.Players.LocalPlayer.Stats.AppliedPasses.QuickUnbox.Value = true
+game.Players.LocalPlayer.Stats.BoardsUnlocked.Value = true
+passes2.AutoUnbox.Value = true
+passes2.DoubleGems.Value = true
+passes2.DoubleBossDrops.Value = true
+passes2.DoubleLuck.Value = true
+passes.AcceleratorUnlocked.Value = true
+passes.HeavyArmorUnlocked.Value = true
+passes.JetpackUnlocked.Value = true
+passes.ParachuteUnlocked.Value = true
+passes2.DoubleItems.Value = true
+--passes.AntennaLevel.Value = 99
